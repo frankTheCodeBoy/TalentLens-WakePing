@@ -1,6 +1,6 @@
 # TalentLens-WakePing 🚀
 
-[![Keep TalentLens Awake](https://github.com/FrankOlum/TalentLens-WakePing/actions/workflows/ping.yml/badge.svg)](https://github.com/FrankOlum/TalentLens-WakePing/actions)
+[![Keep TalentLens Awake](https://github.com/frankTheCodeBoy/TalentLens-WakePing/actions/workflows/ping.yml/badge.svg)](https://github.com/frankTheCodeBoy/TalentLens-WakePing/actions)
 
 A lightweight utility repo designed to keep the [TalentLens Hugging Face Space](https://huggingface.co/spaces/FrankOlum/TalentLens) responsive.
 
