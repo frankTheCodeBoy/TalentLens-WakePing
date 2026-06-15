@@ -1,0 +1,13 @@
+name: Keep TalentLens Awake
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"   # every 20 minutes
+  workflow_dispatch:          # manual trigger option
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl TalentLens Space
+        run: curl -s https://huggingface.co/spaces/FrankOlum/TalentLens > /dev/null
