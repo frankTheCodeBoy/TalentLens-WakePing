@@ -2,8 +2,8 @@ name: Keep TalentLens Awake
 
 on:
   schedule:
-    - cron: "*/20 * * * *"   # Runs every 20 minutes
-  workflow_dispatch:          # Manual trigger option
+    - cron: "*/20 * * * *"    # Runs every 20 minutes
+  workflow_dispatch:           # Manual trigger option
 
 jobs:
   ping-browser:
