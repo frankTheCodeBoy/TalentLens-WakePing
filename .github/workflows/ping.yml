@@ -2,14 +2,24 @@ name: Keep TalentLens Awake
 
 on:
   schedule:
-    - cron: "*/20 * * * *"   # every 20 minutes
-  workflow_dispatch:          # manual trigger option
+    - cron: "*/20 * * * *"   # Runs every 20 minutes
+  workflow_dispatch:          # Manual trigger option
 
 jobs:
-  ping:
+  ping-browser:
     runs-on: ubuntu-latest
     steps:
       - name: Curl TalentLens Space
         run: |
           curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          https://hf.space > /dev/null
+            https://frankolum-talentspace.hf.space > /dev/null
+
+  api-wake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Force Wake Hugging Face Space via API
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          curl -s -X POST "https://huggingface.co/api/spaces/FrankOlum/TalentLens/restart" \
+            -H "Authorization: Bearer $HF_TOKEN" > /dev/null
